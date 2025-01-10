@@ -1,5 +1,5 @@
 ## Pre-commit configuration
-# Last update: 2024-12-11
+# Last update: 2025-01-03
 
 # Save this file to '/.pre-commit-config.yaml'
 
@@ -74,7 +74,7 @@ repos:
       # args: [--rules=@PSR12]
 
   - repo: https://github.com/charliermarsh/ruff-pre-commit
-    rev: v0.8.2
+    rev: v0.8.6
     hooks:
       - id: ruff
         args: ["--fix", "--exit-non-zero-on-fix", "--ignore=B007,B023,C408,D103,E203,E266,E402,E501,F821,S105,S110,S310,SIM105"] # ruff-pre-commit does not recognize these rule selectors: B902,CM001,S410,SCS109,W503,W504
@@ -101,7 +101,7 @@ repos:
       - id: text-unicode-replacement-char
 
   - repo: https://github.com/asottile/pyupgrade
-    rev: v3.19.0
+    rev: v3.19.1
     hooks:
       - id: pyupgrade
         args: ["--py312-plus"]
@@ -110,6 +110,7 @@ repos:
     rev: v2.3.0
     hooks:
       - id: codespell
+        exclude: '^data/'
         args: ["--ignore-words-list=alle,als,deine,dokument,ges,ist,itens,nax,oder,produkt,ressource,ser,sie,tage,termine"] # The --ignore-words-list argument has a bug where it needs to be lowercase, see: https://github.com/codespell-project/codespell/issues/1390
 
 default_language_version:
